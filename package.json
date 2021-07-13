@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint:sol": "npx solhint 'contracts/**/*.sol'"
   },
   "dependencies": {
     "ethers": "^5.4.1",
@@ -27,8 +28,10 @@
     "hardhat": "^2.4.3",
     "husky": "7.0.1",
     "lint-staged": "11.0.1",
-    "prettier": "2.3.2",
+    "prettier": "^2.3.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.15",
     "solhint": "^3.3.6",
+    "solhint-plugin-prettier": "^0.0.5",
     "typechain": "^5.1.1",
     "typescript": "4.3.5",
     "vite": "2.4.2",
