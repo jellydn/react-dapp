@@ -6,6 +6,8 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "prepare": "husky install",
+    "local-node": "npx hardhat node",
+    "compile-node": "npx hardhat run scripts/deploy.js --network localhost",
     "lint:sol": "npx solhint 'contracts/**/*.sol'"
   },
   "dependencies": {

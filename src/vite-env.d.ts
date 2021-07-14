@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  VITE_DEPLOYED_ADDRESS: string;
+  VITE_GREETER_ADDRESS: string;
+  VITE_TOKEN_ADDRESS: string;
 }
