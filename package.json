@@ -29,7 +29,7 @@
     "eslint": "7.31.0",
     "eslint-config-productsway": "0.1.7",
     "ethereum-waffle": "^3.4.0",
-    "hardhat": "2.5.0",
+    "hardhat": "2.6.0",
     "husky": "7.0.1",
     "lint-staged": "11.1.0",
     "prettier": "^2.3.2",
