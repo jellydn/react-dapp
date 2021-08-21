@@ -59,18 +59,59 @@ Greeter deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
 
 ### Step 2: Run react app
 
-Create `.env.local` from `.env.example` from root directory. Remember to fill the value for deployed address.
+Create `.env` from `.env.example` from root directory. Remember to fill the value for deployed address.
 
 ```sh
-# .env.local
-VITE_GREETER_ADDRESS=0x5FC8d32690cc91D4c39d9d3abcBD16989F875707
-VITE_TOKEN_ADDRESS=0x0165878A594ca255338adfa4d48449f69242Eb8F
+# .env
+VITE_GREETER_ADDRESS=
+VITE_TOKEN_ADDRESS=
+
+# Smart Contract
+API_URL=
+MNEMONIC=
+
+# Verify smart contract
+ETHERSCAN_API=
 ```
 
 Then run below command
 
 ```sh
 yarn dev
+```
+
+## Deploy to Ropsten Testnet
+
+- Send some ETH to your wallet https://faucet.dimensions.network/
+
+```sh
+# Compile smart contract and generate types for typescript
+npx hardhat compile
+#
+npx hardhat run scripts/deploy.js --network ropsten
+```
+
+- Verify contract
+
+```sh
+npx hardhat verify --network ropsten VITE_GREETER_ADDRESS 'Hello, Hardhat!'
+```
+
+You might have something similar
+
+```sh
+npx hardhat verify --network ropsten 0x0608Cc0b2970729f4577Eae89403cAE3049C1525  'Hello, Hardhat!'
+Nothing to compile
+Generating typings for: 0 artifacts in dir: src/types for target: ethers-v5
+Successfully generated 3 typings!
+Successfully generated 3 typings for external artifacts!
+Compiling 1 file with 0.8.4
+Successfully submitted source code for contract
+contracts/Greeter.sol:Greeter at 0x0608Cc0b2970729f4577Eae89403cAE3049C1525
+for verification on Etherscan. Waiting for verification result...
+
+Successfully verified contract Greeter on Etherscan.
+https://ropsten.etherscan.io/address/0x0608Cc0b2970729f4577Eae89403cAE3049C1525#code
 ```
 
 ## Author
