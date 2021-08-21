@@ -63,7 +63,8 @@ Create `.env.local` from `.env.example` from root directory. Remember to fill th
 
 ```sh
 # .env.local
-VITE_DEPLOYED_ADDRESS=0x5FbDB2315678afecb367f032d93F642f64180aa3
+VITE_GREETER_ADDRESS=0x5FC8d32690cc91D4c39d9d3abcBD16989F875707
+VITE_TOKEN_ADDRESS=0x0165878A594ca255338adfa4d48449f69242Eb8F
 ```
 
 Then run below command
