@@ -116,6 +116,21 @@ Successfully verified contract Greeter on Etherscan.
 https://ropsten.etherscan.io/address/0x0608Cc0b2970729f4577Eae89403cAE3049C1525#code
 ```
 
+```sh
+npx hardhat verify --network ropsten 0x2Bce4076C8EE3facddC3325FfA4314B854d9447b 1000000 'ERC20 Demo Token' 18 'EDT'
+Nothing to compile
+Generating typings for: 0 artifacts in dir: src/types for target: ethers-v5
+Successfully generated 3 typings!
+Successfully generated 3 typings for external artifacts!
+Compiling 1 file with 0.8.4
+Successfully submitted source code for contract
+contracts/Token.sol:StandardToken at 0x2Bce4076C8EE3facddC3325FfA4314B854d9447b
+for verification on Etherscan. Waiting for verification result...
+
+Successfully verified contract StandardToken on Etherscan.
+https://ropsten.etherscan.io/address/0x2Bce4076C8EE3facddC3325FfA4314B854d9447b#code
+```
+
 ## Author
 
 👤 **Huynh Duc Dung**
