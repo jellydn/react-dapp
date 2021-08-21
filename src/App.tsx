@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
 
+import toast, { Toaster } from "react-hot-toast";
 import GreeterArtifacts from "./artifacts/contracts/Greeter.sol/Greeter.json";
 import TokenArtifacts from "./artifacts/contracts/Token.sol/Token.json";
 import { Greeter } from "./types/Greeter";
@@ -27,6 +28,10 @@ function App() {
   async function requestAccount() {
     if (window.ethereum?.request)
       return window.ethereum.request({ method: "eth_requestAccounts" });
+
+    throw new Error(
+      "Missing install Metamask. Please access https://metamask.io/ to install extension on your browser"
+    );
   }
 
   // call the smart contract, read the current greeting value
@@ -40,9 +45,9 @@ function App() {
       ) as Greeter;
       try {
         const data = await contract.greet();
-        console.log("data: ", data);
+        toast.success(`Greeting: ${data}`);
       } catch (err) {
-        console.log("Error: ", err);
+        toast.error(`Error: ${err}`);
       }
     }
   }
@@ -79,7 +84,7 @@ function App() {
       // request account from metamask
       const [account] = await requestAccount();
       const balance = await contract.balanceOf(account);
-      console.log("balance: ", balance.toString());
+      toast.success(`balance: ${balance.toString()}`);
     }
   }
 
@@ -106,7 +111,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl" />
         <h3 className="text-3xl">Greeter Contract</h3>
         <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20 flex flex-col">
           <div className="flex flex-row flex-wrap">
@@ -135,7 +140,7 @@ function App() {
         </div>
       </div>
       <div className="mt-10 relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl" />
         <h3 className="text-3xl">Token Contract</h3>
         <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20 flex flex-col">
           <button
@@ -167,6 +172,7 @@ function App() {
           </button>
         </div>
       </div>
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 }
