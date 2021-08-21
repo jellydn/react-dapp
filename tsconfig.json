@@ -15,7 +15,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noEmit": true,
     "jsx": "react"
   },
@@ -25,6 +25,6 @@
     "./test"
   ],
   "files": [
-    "./hardhat.config.js"
+    "./hardhat.config.ts"
   ]
 }
