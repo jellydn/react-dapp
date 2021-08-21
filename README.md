@@ -24,7 +24,7 @@ yarn install
 - New-Web-App cli https://github.com/jellydn/new-web-app
 - [Hardhat](https://hardhat.org/) with [TypeChain](https://github.com/ethereum-ts/TypeChain) integration https://github.com/ethereum-ts/TypeChain/tree/master/packages/hardhat
 
-## Usage
+## Develop
 
 ### Step 1: Deploy smart contract on local node
 
@@ -32,6 +32,8 @@ Open 1st terminal, then run below command
 
 ```sh
 npx hardhat node
+# or
+yarn local-node
 ```
 
 For example, below is my result.
@@ -51,34 +53,37 @@ Next, compile and deploy to local node
 ```sh
 # Compile smart contract and generate types for typescript
 npx hardhat compile
-#
+# Deploy localhost
 npx hardhat run scripts/deploy.js --network localhost
+# Or
+yarn compile-node
 ```
 
 You will get the deploy address from CLI. For example:
 
 ```sh
-px hardhat run scripts/deploy.js --network localhost
+npx hardhat run scripts/deploy.js --network localhost
 Generating typings for: 0 artifacts in dir: src/types for target: ethers-v5
 Successfully generated 3 typings!
 Successfully generated 3 typings for external artifacts!
-Greeter deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+Greeter deployed to: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+Token deployed to: 0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9
 ```
 
 ### Step 2: Run react app
 
-Create `.env` from `.env.example` from root directory. Remember to fill the value for deployed address.
+Create `.env` from `.env.example` from root directory. Remember to fill the value for deployed addresses.
 
 ```sh
 # .env
 VITE_GREETER_ADDRESS=
 VITE_TOKEN_ADDRESS=
 
-# Smart Contract
+# Fill below information if you want to deploy to Mainnet/Testnet
 API_URL=
 MNEMONIC=
 
-# Verify smart contract
+# Verify smart contract on EtherScan
 ETHERSCAN_API=
 ```
 
