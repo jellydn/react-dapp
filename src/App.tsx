@@ -111,8 +111,20 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl" />
-        <h3 className="text-3xl">Greeter Contract</h3>
+        <div className="lg:flex md:flex text-xl justify-center items-center mx-auto border-orange-500 max-w-2xl py-4 px-4">
+          <div className="font-semibold p-2">
+            <span className="text-gray-800">Greeter Contract</span>
+            <span className="text-orange-500 mx-1 text-3xl">/</span>
+            <a
+              href={`https://ropsten.etherscan.io/address/${greeterAddress}`}
+              target="_blank"
+              className="px-4 py-1 rounded-full focus:outline-none bg-orange-500 text-white shadow ml-2"
+              rel="noreferrer"
+            >
+              Check
+            </a>
+          </div>
+        </div>
         <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20 flex flex-col">
           <div className="flex flex-row flex-wrap">
             <button
@@ -140,8 +152,20 @@ function App() {
         </div>
       </div>
       <div className="mt-10 relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl" />
-        <h3 className="text-3xl">Token Contract</h3>
+        <div className="lg:flex md:flex text-xl justify-center items-center mx-auto border-orange-500 max-w-2xl py-4 px-4">
+          <div className="font-semibold p-2">
+            <span className="text-gray-800">Token Contract</span>
+            <span className="text-orange-500 mx-1 text-3xl">/</span>
+            <a
+              href={`https://ropsten.etherscan.io/address/${tokenAddress}`}
+              target="_blank"
+              className="px-4 py-1 rounded-full focus:outline-none bg-orange-500 text-white shadow ml-2"
+              rel="noreferrer"
+            >
+              Check
+            </a>
+          </div>
+        </div>
         <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20 flex flex-col">
           <button
             className="btn btn-green mt-1"
