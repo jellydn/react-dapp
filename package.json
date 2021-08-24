@@ -46,7 +46,7 @@
     "typechain": "5.1.2",
     "typescript": "4.3.5",
     "vite": "2.5.1",
-    "vite-plugin-windicss": "1.2.9",
+    "vite-plugin-windicss": "1.3.0",
     "windicss": "3.1.7"
   },
   "lint-staged": {
