@@ -17,6 +17,14 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Greeter__factory>;
     getContractFactory(
+      name: "ERC20Token",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ERC20Token__factory>;
+    getContractFactory(
+      name: "StandardToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.StandardToken__factory>;
+    getContractFactory(
       name: "StandardToken",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.StandardToken__factory>;

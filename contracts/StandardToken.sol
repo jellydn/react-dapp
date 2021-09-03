@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-interface Token {
+interface ERC20Token {
 	/// @param _owner The address from which the balance will be retrieved
 	/// @return balance the balance
 	function balanceOf(address _owner) external view returns (uint256 balance);
@@ -50,7 +50,7 @@ interface Token {
 	);
 }
 
-contract StandardToken is Token {
+contract StandardToken is ERC20Token {
 	uint256 private constant MAX_UINT256 = 2**256 - 1;
 	mapping(address => uint256) public balances;
 	mapping(address => mapping(address => uint256)) public allowed;
