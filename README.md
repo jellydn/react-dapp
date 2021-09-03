@@ -80,7 +80,8 @@ VITE_GREETER_ADDRESS=
 VITE_TOKEN_ADDRESS=
 
 # Fill below information if you want to deploy to Mainnet/Testnet
-API_URL=
+ROPSTEN_PROVIDER_URL=
+RINKEBY_PROVIDER_URL=
 MNEMONIC=
 
 # Verify smart contract on EtherScan
@@ -151,7 +152,6 @@ https://ropsten.etherscan.io/address/0x2Bce4076C8EE3facddC3325FfA4314B854d9447b#
 - Website: https://productsway.com/
 - Twitter: [@jellydn](https://twitter.com/jellydn)
 - Github: [@jellydn](https://github.com/jellydn)
-
 
 ## Stargazers 🌟
 

@@ -39,7 +39,13 @@ module.exports = {
       chainId: 1337,
     },
     ropsten: {
-      url: process.env.API_URL,
+      url: process.env.ROPSTEN_PROVIDER_URL,
+      accounts: {
+        mnemonic: process.env.MNEMONIC,
+      },
+    },
+    rinkeby: {
+      url: process.env.RINKEBY_PROVIDER_URL,
       accounts: {
         mnemonic: process.env.MNEMONIC,
       },
