@@ -3,9 +3,9 @@ import { ethers } from "ethers";
 
 import toast, { Toaster } from "react-hot-toast";
 import GreeterArtifacts from "./artifacts/contracts/Greeter.sol/Greeter.json";
-import TokenArtifacts from "./artifacts/contracts/Token.sol/Token.json";
+import StandardTokenArtifacts from "./artifacts/contracts/StandardToken.sol/StandardToken.json";
 import { Greeter } from "./types/Greeter";
-import { Token } from "./types/Token";
+import { StandardToken } from "./types/StandardToken";
 
 const greeterAddress = import.meta.env.VITE_GREETER_ADDRESS;
 const tokenAddress = import.meta.env.VITE_TOKEN_ADDRESS;
@@ -77,9 +77,9 @@ function App() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(
         tokenAddress,
-        TokenArtifacts.abi,
+        StandardTokenArtifacts.abi,
         provider
-      ) as Token;
+      ) as StandardToken;
 
       // request account from metamask
       const [account] = await requestAccount();
@@ -99,9 +99,9 @@ function App() {
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
         tokenAddress,
-        TokenArtifacts.abi,
+        StandardTokenArtifacts.abi,
         signer
-      ) as Token;
+      ) as StandardToken;
       const transaction = await contract.transfer(userAddress, amount);
       await transaction.wait();
       getBalance();
