@@ -1320,23 +1320,23 @@
     "@rollup/pluginutils" "^4.1.1"
     react-refresh "^0.10.0"
 
-"@windicss/config@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.3.0.tgz#9752e9ef443db7d08a22c3df764b3cb4a655eb58"
-  integrity sha512-/F2dg9ltkoQLA4cpr4YQP4V+Y1hO0WOF8jtHoErCKKBr1wBnFLieRjhsXcolM5ZbqH7wLoUrPkdBkIFlocDblg==
+"@windicss/config@1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.4.1.tgz#c721cdd174b7e7530ff20920e32e546e7d7f0354"
+  integrity sha512-4jWG8sajwfV1pa+igFTwEcJgcrqHqcuxRI96IXIt6SuET3vSkwjP8X+4rBfns7QcR+Thxy6K/kBL0xvZNrJsPQ==
   dependencies:
     debug "^4.3.2"
     jiti "^1.11.0"
     tsup "^4.14.0"
     windicss "^3.1.7"
 
-"@windicss/plugin-utils@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.3.0.tgz#165ea203613d0308234edd18448f4da87ec4ee1d"
-  integrity sha512-4qOXUStYPI3WTHR6WdxGhzKWMZar7vwWY08QFVc9Zztg5eoQ3GyYsMPn83OSRwc/jA7mSkkoCtHLGzop2KjHcg==
+"@windicss/plugin-utils@1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.4.1.tgz#3da461f0685293ee5aab75237e29ab6e40e0db4f"
+  integrity sha512-7gfGroXHH3iHxG6cUakvTjO9ZytxhxUsscc4P++p2Q0KGTh29NnlJci9AQpvO2h+b6+z8VqsDLv1/8ob6hd42g==
   dependencies:
     "@antfu/utils" "^0.2.4"
-    "@windicss/config" "1.3.0"
+    "@windicss/config" "1.4.1"
     debug "^4.3.2"
     fast-glob "^3.2.7"
     magic-string "^0.25.7"
@@ -9718,12 +9718,12 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-vite-plugin-windicss@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-1.3.0.tgz#ee901410ce010fa6fb0770115ec3cfd87372ab4c"
-  integrity sha512-Xd9VxXX8z9bsdKs3iL6qXJDXsDDl/HQSWqJOLZFkkp23b3goGRnlT4Rlo5WeIAfrEV944r8bF7wfpDXCkk8XCg==
+vite-plugin-windicss@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-1.4.1.tgz#a2536b70bad024b98c6015f2b6999b223ba6e748"
+  integrity sha512-LLWipPvTexLSF0RRFhfNuPiCifKQsfLuyd3y7z27gSBtDPmHOOXwpfEWrAv9oUnMQzXfG93RJ1HVnjk1hUo77Q==
   dependencies:
-    "@windicss/plugin-utils" "1.3.0"
+    "@windicss/plugin-utils" "1.4.1"
     chalk "^4.1.2"
     debug "^4.3.2"
     windicss "^3.1.7"
