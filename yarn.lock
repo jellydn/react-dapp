@@ -1285,23 +1285,23 @@
     "@rollup/pluginutils" "^4.1.1"
     react-refresh "^0.10.0"
 
-"@windicss/config@1.4.5":
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.4.5.tgz#33ff2d4e1917a956c6a651fe4cf3e95c4f3917fb"
-  integrity sha512-+LLk3KmFTELPIVaBj9T4PE27aKtnLPLiHKeKLiK3H8yjre52F6IkP5czM5QBk9Ri8CHUIEjJClNDjOAMC1xBIg==
+"@windicss/config@1.4.7":
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.4.7.tgz#5562a36b907cc28a1b8ecc7d2ddc534a43e11ae8"
+  integrity sha512-giz6b9ce5fiac/JoLQSabcwD4wbkSt07Z0+Y0Ruw5RvJ4oejq7/4qv/cmFtjbf3l+rmxh8U8/1szQMd0Zs2esg==
   dependencies:
     debug "^4.3.2"
     jiti "^1.12.3"
-    tsup "^5.1.0"
+    tsup "^5.2.0"
     windicss "^3.1.7"
 
-"@windicss/plugin-utils@1.4.5":
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.4.5.tgz#9456a93e10d5e0b4396206f1eee0a0df7deadf66"
-  integrity sha512-pzpHJe8E/eYRHbLe3u568dAw/+3zomG/ptZ3cWk7GrYyRQooRoeEdRu4c0cyHQIVUIXJ7IO2tGHPFdd3yJS9Vg==
+"@windicss/plugin-utils@1.4.7":
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.4.7.tgz#d1b1ba445a85e6847a1385bf9348b4b5b3a00267"
+  integrity sha512-YRWQ4NHMS4/YPixoqku1+gRDRZgMHgRbx4Q0r+bLipczbbpNDPWgL4JS8F+xxbQn2wYRh7q+xqA8NIe/7T7vIA==
   dependencies:
     "@antfu/utils" "^0.3.0"
-    "@windicss/config" "1.4.5"
+    "@windicss/config" "1.4.7"
     debug "^4.3.2"
     fast-glob "^3.2.7"
     magic-string "^0.25.7"
@@ -9318,10 +9318,10 @@ tsort@0.0.1:
   resolved "https://registry.yarnpkg.com/tsort/-/tsort-0.0.1.tgz#e2280f5e817f8bf4275657fd0f9aebd44f5a2786"
   integrity sha1-4igPXoF/i/QnVlf9D5rr1E9aJ4Y=
 
-tsup@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/tsup/-/tsup-5.1.0.tgz#d9e916648fe6344466057c45c49bf7e0628a2ac2"
-  integrity sha512-shox7rIKPneySkC6CI7py1N1Buqlp++sofTztZxGAESP4od2WrPD/y0FwNo6+XaoXfuzVV6bDAwvCtDpc0bq1A==
+tsup@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/tsup/-/tsup-5.2.0.tgz#bfc010375f6e6829adbde93e763ca46aedac0007"
+  integrity sha512-Im6TcLyjP3wfid1OdIRJw+7E4E5WAKvXi1GSz4V0qxBDblG14dPlnoxZGNuvfk/6X3DlhxgTbWbnyR+JRruYPA==
   dependencies:
     cac "^6.7.2"
     chalk "^4.1.0"
@@ -9678,12 +9678,12 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-vite-plugin-windicss@1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-1.4.5.tgz#e38838aa3fcc3c5af4752ec4446333212b505827"
-  integrity sha512-C9EOA/8Z3In15fa2MkZrk6IrzLC1IBzHhuuAPIo3uhPLqAYC8YohJnZA8IRImlSimAsPtIiJrGaKQunjpasLqg==
+vite-plugin-windicss@1.4.7:
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-1.4.7.tgz#505ff1deb4209b95681c0d6eff59775e600e0f2b"
+  integrity sha512-m0z1CPrHKE4xrSb84f3iZICBFSznZvhvTHTv6PB3Bd0E56eDSbWNhBuV1m7Gg71wRpBeQv6oLt+tuOEZQ/+RVw==
   dependencies:
-    "@windicss/plugin-utils" "1.4.5"
+    "@windicss/plugin-utils" "1.4.7"
     chalk "^4.1.2"
     debug "^4.3.2"
     windicss "^3.1.7"
