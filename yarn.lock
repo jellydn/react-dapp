@@ -10059,7 +10059,12 @@ wide-align@1.1.3:
   dependencies:
     string-width "^1.0.2 || 2"
 
-windicss@3.1.7, windicss@^3.1.7:
+windicss@3.1.8:
+  version "3.1.8"
+  resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.1.8.tgz#56e80e362e6d1d32cc3d1d5c63069dca14d9fe4a"
+  integrity sha512-G1UfnnSZ3s4MZnqqIL8DOQbL8rBArQKlodlby8OvP333TPaRouamuIuYyCt5kSNEJzFrkx168TSRIkqhDs9bOA==
+
+windicss@^3.1.7:
   version "3.1.7"
   resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.1.7.tgz#8a3b8a07ed97c2c1354a6e31820d8059da35f724"
   integrity sha512-Q/HQ9j+r2R0fdt85zAjccdo11kHWzQmpkuwIUQIO6PSypyDmBTfN14aAy4szLrpgo2woyuHM7Y+kir4IG4qnKQ==
