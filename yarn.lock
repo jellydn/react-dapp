@@ -1272,28 +1272,28 @@
     "@rollup/pluginutils" "^4.1.1"
     react-refresh "^0.10.0"
 
-"@windicss/config@1.4.8":
-  version "1.4.8"
-  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.4.8.tgz#78f46b823e7989ecd69640b38df35dc52b8f8215"
-  integrity sha512-lZgPvK70gSSGWxSCIZzYmsxlTtJ23ZPKXh+OR9ZaAfNGczZH4G01dxfZN69iNQt4o3uXKJtVN0dZsxHEWzggqQ==
+"@windicss/config@1.4.9":
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.4.9.tgz#fe36c540b71129a8a064a758ec45cf2dca1ee7d5"
+  integrity sha512-DYgWKuY48Nrhi4xprdKVC2IpcLQ8j3jJ1FYgaoHKvHYZG7Ux4xaPZEYaAWEeEiGKLP7bv9VpBYdjRTKFqOMIsA==
   dependencies:
     debug "^4.3.2"
-    jiti "^1.12.3"
-    tsup "^5.2.0"
-    windicss "^3.1.7"
+    jiti "^1.12.5"
+    tsup "^5.2.1"
+    windicss "^3.1.8"
 
-"@windicss/plugin-utils@1.4.8":
-  version "1.4.8"
-  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.4.8.tgz#aa4ee7624ec843f004a8e57251d2935e4881f4f7"
-  integrity sha512-9tBJZi/8xxsMb9ZaxalNxo0yv6pR8/H2e/4io00qN+Oie2zOgDc54zFrr+kozgN1ISdmV15zGUXgEMdylEDC+Q==
+"@windicss/plugin-utils@1.4.9":
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.4.9.tgz#c31d128b94c25e48298f110da1916f0f0830fa20"
+  integrity sha512-Pie0mEH5whtI3zkWKThmgS6dxSAxQL5Be01Er/abLMVQjdoecoQT7ek2qSYOoFTtXGs7gMPUtCV/NdoL2TDgWw==
   dependencies:
     "@antfu/utils" "^0.3.0"
-    "@windicss/config" "1.4.8"
+    "@windicss/config" "1.4.9"
     debug "^4.3.2"
     fast-glob "^3.2.7"
     magic-string "^0.25.7"
     micromatch "^4.0.4"
-    windicss "^3.1.7"
+    windicss "^3.1.8"
 
 "@yarnpkg/lockfile@^1.1.0":
   version "1.1.0"
@@ -5899,10 +5899,10 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
-jiti@^1.12.3:
-  version "1.12.3"
-  resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.12.3.tgz#fe6f9cb066aa2c37981231dffb1d3f04ab4ebdb2"
-  integrity sha512-p88jl9WzvZYekMS5ZOB61bJ1SPV69o7nEpAU+mFpGzXErqLEg3WvNz3jeXylAiSfLZzvqZssrAu08N3AuvaqwQ==
+jiti@^1.12.5:
+  version "1.12.5"
+  resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.12.5.tgz#67ee49e95299ed6c18ffdcc2cfe0d2f65432d22b"
+  integrity sha512-+K46njcZW6E/OPWWHImm3G1u+fYVcKU7vqc8b36oVtfi9l3moaSGtsPydaRf2gPuVxh13G1KSCVlW0DfyYUjPQ==
 
 joycon@^3.0.1:
   version "3.0.1"
@@ -9373,10 +9373,10 @@ tsort@0.0.1:
   resolved "https://registry.yarnpkg.com/tsort/-/tsort-0.0.1.tgz#e2280f5e817f8bf4275657fd0f9aebd44f5a2786"
   integrity sha1-4igPXoF/i/QnVlf9D5rr1E9aJ4Y=
 
-tsup@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/tsup/-/tsup-5.2.0.tgz#bfc010375f6e6829adbde93e763ca46aedac0007"
-  integrity sha512-Im6TcLyjP3wfid1OdIRJw+7E4E5WAKvXi1GSz4V0qxBDblG14dPlnoxZGNuvfk/6X3DlhxgTbWbnyR+JRruYPA==
+tsup@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/tsup/-/tsup-5.2.1.tgz#4ad4debd1d7852e8c4bb40075ebd2ee85efe7715"
+  integrity sha512-eQmRfKoHIiTFg38Dh2MARCx3J0+P+wbwB5iSHcXTwsnVR9csGLpln5qqBjdgyAGV1VTbOmyU37veCi2eA+wuqA==
   dependencies:
     cac "^6.7.2"
     chalk "^4.1.0"
@@ -9728,15 +9728,15 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-vite-plugin-windicss@1.4.8:
-  version "1.4.8"
-  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-1.4.8.tgz#3277128beae53379e8cd1a66d54734bc846b6e51"
-  integrity sha512-X5lL0Cll+HAUDTaeN0pVEvzs3jZ3gY26vaZCPW/+whMsaErXY7cSV3hNzc8TrFi3GMCeWgqfRAedI2spMM1wHg==
+vite-plugin-windicss@1.4.9:
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-1.4.9.tgz#7f97a6157790d614d4cc518e86cfd62abc189285"
+  integrity sha512-4DxBnsQ8dvhhtR5aUgpTApxN7Auh11/9xOIW7Qdu+OuTY6tyU1NqZntVQpwArf4gNsJssgUBBCfFx1zei+rYnQ==
   dependencies:
-    "@windicss/plugin-utils" "1.4.8"
+    "@windicss/plugin-utils" "1.4.9"
     chalk "^4.1.2"
     debug "^4.3.2"
-    windicss "^3.1.7"
+    windicss "^3.1.8"
 
 vite@2.6.2:
   version "2.6.2"
@@ -10100,7 +10100,7 @@ wide-align@1.1.3:
   dependencies:
     string-width "^1.0.2 || 2"
 
-windicss@3.1.8, windicss@^3.1.7:
+windicss@3.1.8, windicss@^3.1.8:
   version "3.1.8"
   resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.1.8.tgz#56e80e362e6d1d32cc3d1d5c63069dca14d9fe4a"
   integrity sha512-G1UfnnSZ3s4MZnqqIL8DOQbL8rBArQKlodlby8OvP333TPaRouamuIuYyCt5kSNEJzFrkx168TSRIkqhDs9bOA==
