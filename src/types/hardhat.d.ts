@@ -25,6 +25,22 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.StandardToken__factory>;
 
+    getContractAt(
+      name: "Greeter",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Greeter>;
+    getContractAt(
+      name: "ERC20Token",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ERC20Token>;
+    getContractAt(
+      name: "StandardToken",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.StandardToken>;
+
     // default types
     getContractFactory(
       name: string,
@@ -35,5 +51,10 @@ declare module "hardhat/types/runtime" {
       bytecode: ethers.utils.BytesLike,
       signer?: ethers.Signer
     ): Promise<ethers.ContractFactory>;
+    getContractAt(
+      nameOrAbi: string | any[],
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<ethers.Contract>;
   }
 }
