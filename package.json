@@ -37,7 +37,7 @@
     "ethereum-waffle": "3.4.0",
     "hardhat": "2.6.8",
     "husky": "7.0.4",
-    "lint-staged": "11.2.6",
+    "lint-staged": "12.0.1",
     "prettier": "2.4.1",
     "prettier-plugin-solidity": "1.0.0-beta.19",
     "solhint": "3.3.6",
