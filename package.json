@@ -38,7 +38,7 @@
     "hardhat": "2.7.0",
     "husky": "7.0.4",
     "lint-staged": "12.1.2",
-    "prettier": "2.5.0",
+    "prettier": "2.5.1",
     "prettier-plugin-solidity": "1.0.0-beta.19",
     "solhint": "3.3.6",
     "solhint-plugin-prettier": "0.0.5",
