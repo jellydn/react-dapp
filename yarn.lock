@@ -3467,10 +3467,10 @@ dom-walk@^0.1.0:
   resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.2.tgz#0c548bef048f4d1f2a97249002236060daa3fd84"
   integrity sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==
 
-dotenv@11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-11.0.0.tgz#ee37feddf8ada6d348a79e198312d4a8abfd1c1e"
-  integrity sha512-Fp/b504Y5W+e+FpCxTFMUZ7ZEQkQYF0rx+KZtmwixJxGQbLHrhCwo3FjZgNC8vIfrSi29PABNbMoCGD9YoiXbQ==
+dotenv@15.0.0:
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-15.0.0.tgz#2a585639429bf2c2c62f387f0fffde9c75aafde0"
+  integrity sha512-/l1sXXm79ry34KwwS0y4oVZjB468iw/6u9g1W26dtexKcIJAnVL2pMF+hxQwzZ7LutxOwEgtym9eIxvX33CMKg==
 
 dotignore@~0.1.2:
   version "0.1.2"
