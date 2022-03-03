@@ -10191,7 +10191,12 @@ which@^1.2.9:
   dependencies:
     isexe "^2.0.0"
 
-windicss@3.5.0, windicss@^3.5.0:
+windicss@3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.5.1.tgz#5e279c21179dbc122122d0b3a3a2651511249241"
+  integrity sha512-E1hYZATcZFci/XhGS0sJAMRxULjnK+glNukE78Ku7xeb3jxgMY55fFOdIrav+GjQCsgR+IZxPq9/DwmO6eyc4Q==
+
+windicss@^3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.5.0.tgz#cb6896b136bc21d32d50a742352eece4ce0400d1"
   integrity sha512-+UNYm2Zy4TM2uLiz6bqY2a69LavMqGbILFIwuGhPEJ/uqsPT3kCGSaWlhMw/weIaFOkm1K1cEzZ015Y8pp8N1A==
