@@ -4207,10 +4207,10 @@ eslint-config-airbnb-base@^15.0.0:
     object.entries "^1.1.5"
     semver "^6.3.0"
 
-eslint-config-airbnb-typescript@^16.1.1:
-  version "16.1.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-typescript/-/eslint-config-airbnb-typescript-16.1.2.tgz#6ad1d6179afd7a857e04bafad8eac131f31cd8e7"
-  integrity sha512-IZnWyJXCYGpWvEmGQ9eyxQUnuH/NTmw4E6pI+NNGNxu4weWclZstaDGjzD+lrld81sP4BKshaigLbqFWBB9QPg==
+eslint-config-airbnb-typescript@^17.0.0:
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-typescript/-/eslint-config-airbnb-typescript-17.0.0.tgz#360dbcf810b26bbcf2ff716198465775f1c49a07"
+  integrity sha512-elNiuzD0kPAPTXjFWg+lE24nMdHMtuxgYoD30OyMD6yrW1AhFZPAg27VX7d3tzOErw+dgJTNWfRSDqEcXb4V0g==
   dependencies:
     eslint-config-airbnb-base "^15.0.0"
 
@@ -4219,12 +4219,12 @@ eslint-config-prettier@^8.5.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.5.0.tgz#5a81680ec934beca02c7b1a61cf8ca34b66feab1"
   integrity sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==
 
-eslint-config-productsway@0.1.12:
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/eslint-config-productsway/-/eslint-config-productsway-0.1.12.tgz#3c8c49bf732cb5c88fbd9414f365662f6010e397"
-  integrity sha512-HqluawxVeLUv+eiRGQ05A3tXfqcwa6zH2SqsP9C3pnfVn5r9oBYJP3KhSr0TVVXNaSlEZ9HZrBtOu3IOtv1lfw==
+eslint-config-productsway@0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/eslint-config-productsway/-/eslint-config-productsway-0.1.13.tgz#e078efdac0a7f032e55c3321a8d8a27487a67e19"
+  integrity sha512-6AxY1Vo83bhOwx+JSMGRqohhjQ+M2tsOdLKAurC9NGXl35dcYQVHBKNJB9DJIl9qKzoGDKEqyBw/gKxXXxNmOw==
   dependencies:
-    eslint-config-airbnb-typescript "^16.1.1"
+    eslint-config-airbnb-typescript "^17.0.0"
     eslint-config-prettier "^8.5.0"
     eslint-plugin-import "^2.25.4"
     eslint-plugin-jsx-a11y "^6.5.1"
