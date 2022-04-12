@@ -3,8 +3,11 @@
 /* eslint-disable */
 
 import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
-import type { ERC20Token, ERC20TokenInterface } from "../ERC20Token";
+import type { Provider } from "@ethersproject/providers";
+import type {
+  ERC20Token,
+  ERC20TokenInterface,
+} from "../../StandardToken.sol/ERC20Token";
 
 const _abi = [
   {

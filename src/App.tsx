@@ -1,11 +1,10 @@
-import React, { useState } from "react";
 import { ethers } from "ethers";
-
+import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+
 import GreeterArtifacts from "./artifacts/contracts/Greeter.sol/Greeter.json";
 import StandardTokenArtifacts from "./artifacts/contracts/StandardToken.sol/StandardToken.json";
-import { Greeter } from "./types/Greeter";
-import { StandardToken } from "./types/StandardToken";
+import { Greeter, StandardToken } from "./types";
 
 const greeterAddress = import.meta.env.VITE_GREETER_ADDRESS;
 const tokenAddress = import.meta.env.VITE_TOKEN_ADDRESS;

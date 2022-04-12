@@ -1,4 +1,12 @@
 {
+	"importOrder": [
+		"^@core/(.*)$",
+		"^@server/(.*)$",
+		"^@ui/(.*)$",
+		"^[./]"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true,
 	"overrides": [
 		{
 			"files": "*.sol",
