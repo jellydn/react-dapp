@@ -1,13 +1,13 @@
-# Welcome to react-dapp 👋
+# Welcome to react-micro-web3 👋
 
 ![Version](https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000)
 [![Twitter: jellydn](https://img.shields.io/twitter/follow/jellydn.svg?style=social)](https://twitter.com/jellydn)
 
 > Dapp example with react (vitejs)
 
-## 🏠 [Homepage](https://github.com/jellydn/react-dapp)
+## 🏠 [Homepage](https://github.com/ProductsWay/react-micro-web3)
 
-### ✨ [Demo](https://dapp-demo.productsway.com/)
+### ✨ [Demo](https://micro-web3-demo.productsway.com/)
 
 ## Screenshot
 
@@ -22,7 +22,7 @@ yarn install
 ## Built with
 
 - New-Web-App cli https://github.com/jellydn/new-web-app
-- [Hardhat](https://hardhat.org/) with [TypeChain](https://github.com/ethereum-ts/TypeChain) integration https://github.com/ethereum-ts/TypeChain/tree/master/packages/hardhat
+- micro-web3: Typesafe Web3 with minimum deps: call eth contracts directly from JS. Batteries included https://github.com/paulmillr/micro-web3
 
 ## Develop
 
@@ -155,7 +155,7 @@ https://ropsten.etherscan.io/address/0x2Bce4076C8EE3facddC3325FfA4314B854d9447b#
 
 ## Stargazers 🌟
 
-[![Stargazers repo roster for jellydn/react-dapp](https://reporoster.com/stars/jellydn/react-dapp)](https://github.com/jellydn/react-dapp/stargazers)
+[![Stargazers repo roster for ProductsWay/react-micro-web3](https://reporoster.com/stars/ProductsWay/react-micro-web3)](https://github.com/ProductsWay/react-micro-web3/stargazers)
 
 ## Show your support
 
