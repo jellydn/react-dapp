@@ -1,17 +1,14 @@
-import { ethers } from "ethers";
 import React, { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
-import GreeterArtifacts from "./artifacts/contracts/Greeter.sol/Greeter.json";
-import StandardTokenArtifacts from "./artifacts/contracts/StandardToken.sol/StandardToken.json";
-import { Greeter, StandardToken } from "./types";
+import { fetchGreeting, getBalance, sendToken, setGreeting } from "./web3";
 
 const greeterAddress = import.meta.env.VITE_GREETER_ADDRESS;
 const tokenAddress = import.meta.env.VITE_TOKEN_ADDRESS;
 
 declare global {
   interface Window {
-    ethereum: ethers.providers.ExternalProvider;
+    ethereum: any;
   }
 }
 
@@ -22,90 +19,6 @@ function App() {
   const [userAddress, setUserAddressValue] = useState<string>("");
   // store amount in local state
   const [amount, setAmountValue] = useState<number>(0);
-
-  // request access to the user's MetaMask account
-  async function requestAccount() {
-    if (window.ethereum?.request)
-      return window.ethereum.request({ method: "eth_requestAccounts" });
-
-    throw new Error(
-      "Missing install Metamask. Please access https://metamask.io/ to install extension on your browser"
-    );
-  }
-
-  // call the smart contract, read the current greeting value
-  async function fetchGreeting() {
-    if (typeof window.ethereum !== "undefined") {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const contract = new ethers.Contract(
-        greeterAddress,
-        GreeterArtifacts.abi,
-        provider
-      ) as Greeter;
-      try {
-        const data = await contract.greet();
-        toast.success(`Greeting: ${data}`);
-      } catch (err) {
-        toast.error(`Error: ${err}`);
-      }
-    }
-  }
-
-  // call the smart contract, send an update
-  async function setGreeting() {
-    if (!greeting) return;
-    if (typeof window.ethereum !== "undefined") {
-      await requestAccount();
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const contract = new ethers.Contract(
-        greeterAddress,
-        GreeterArtifacts.abi,
-        signer
-      ) as Greeter;
-
-      const transaction = await contract.setGreeting(greeting);
-      await transaction.wait();
-      fetchGreeting();
-    }
-  }
-
-  // get balance of the token contract
-  async function getBalance() {
-    if (typeof window.ethereum !== "undefined") {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const contract = new ethers.Contract(
-        tokenAddress,
-        StandardTokenArtifacts.abi,
-        provider
-      ) as StandardToken;
-
-      // request account from metamask
-      const [account] = await requestAccount();
-      const balance = await contract.balanceOf(account);
-      toast.success(`balance: ${balance.toString()}`);
-    }
-  }
-
-  // send a transaction to the token contract
-  async function sendToken() {
-    if (!userAddress || !amount) return;
-
-    if (typeof window.ethereum !== "undefined") {
-      // request account from metamask
-      await requestAccount();
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const contract = new ethers.Contract(
-        tokenAddress,
-        StandardTokenArtifacts.abi,
-        signer
-      ) as StandardToken;
-      const transaction = await contract.transfer(userAddress, amount);
-      await transaction.wait();
-      getBalance();
-    }
-  }
 
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
@@ -142,7 +55,7 @@ function App() {
               <button
                 className="btn btn-green ml-1"
                 type="button"
-                onClick={setGreeting}
+                onClick={() => setGreeting(greeting)}
               >
                 Set Greeting
               </button>
@@ -189,7 +102,7 @@ function App() {
           <button
             className="btn btn-green mt-1"
             type="button"
-            onClick={sendToken}
+            onClick={() => sendToken(amount, userAddress)}
           >
             Send token
           </button>
