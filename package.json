@@ -11,7 +11,7 @@
     "lint:sol": "npx solhint 'contracts/**/*.sol'"
   },
   "dependencies": {
-    "ethers": "5.6.9",
+    "ethers": "5.7.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "2.3.0"
