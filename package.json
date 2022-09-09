@@ -34,7 +34,7 @@
     "chai": "4.3.6",
     "dotenv": "16.0.2",
     "eslint": "8.23.0",
-    "eslint-config-productsway": "0.1.15",
+    "eslint-config-productsway": "0.1.16",
     "ethereum-waffle": "3.4.4",
     "hardhat": "2.10.2",
     "husky": "8.0.1",
