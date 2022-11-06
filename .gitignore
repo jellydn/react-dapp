@@ -4,6 +4,7 @@ dist
 dist-ssr
 *.local
 .env
+.envrc
 
 node_modules
 
