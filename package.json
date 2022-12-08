@@ -45,7 +45,7 @@
     "solhint-plugin-prettier": "0.0.5",
     "ts-node": "10.9.1",
     "typechain": "8.1.1",
-    "typescript": "4.8.4",
+    "typescript": "4.9.4",
     "vite": "3.2.2",
     "vite-plugin-windicss": "1.8.8",
     "windicss": "3.5.6"
