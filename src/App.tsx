@@ -108,26 +108,26 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-      <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="lg:flex md:flex text-xl justify-center items-center mx-auto border-orange-500 max-w-2xl py-4 px-4">
-          <div className="font-semibold p-2">
+    <div className="flex flex-col justify-center py-6 min-h-screen bg-gray-100 sm:py-12">
+      <div className="relative py-3 sm:mx-auto sm:max-w-xl">
+        <div className="justify-center items-center py-4 px-4 mx-auto max-w-2xl text-xl border-orange-500 md:flex lg:flex">
+          <div className="p-2 font-semibold">
             <span className="text-gray-800">Greeter Contract</span>
-            <span className="text-orange-500 mx-1 text-3xl">/</span>
+            <span className="mx-1 text-3xl text-orange-500">/</span>
             <a
               href={`https://ropsten.etherscan.io/address/${greeterAddress}`}
               target="_blank"
-              className="px-4 py-1 rounded-full focus:outline-none bg-orange-500 text-white shadow ml-2"
+              className="py-1 px-4 ml-2 text-white bg-orange-500 rounded-full shadow focus:outline-none"
               rel="noreferrer"
             >
               Check
             </a>
           </div>
         </div>
-        <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20 flex flex-col">
+        <div className="flex relative flex-col py-10 px-4 bg-white shadow-lg sm:p-20 sm:rounded-3xl">
           <div className="flex flex-row flex-wrap">
             <button
-              className="btn btn-green mt-1"
+              className="mt-1 btn btn-green"
               type="button"
               onClick={fetchGreeting}
             >
@@ -140,7 +140,7 @@ function App() {
                 placeholder="Set greeting"
               />
               <button
-                className="btn btn-green ml-1"
+                className="ml-1 btn btn-green"
                 type="button"
                 onClick={setGreeting}
               >
@@ -150,24 +150,24 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="mt-10 relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="lg:flex md:flex text-xl justify-center items-center mx-auto border-orange-500 max-w-2xl py-4 px-4">
-          <div className="font-semibold p-2">
+      <div className="relative py-3 mt-10 sm:mx-auto sm:max-w-xl">
+        <div className="justify-center items-center py-4 px-4 mx-auto max-w-2xl text-xl border-orange-500 md:flex lg:flex">
+          <div className="p-2 font-semibold">
             <span className="text-gray-800">Token Contract</span>
-            <span className="text-orange-500 mx-1 text-3xl">/</span>
+            <span className="mx-1 text-3xl text-orange-500">/</span>
             <a
               href={`https://ropsten.etherscan.io/address/${tokenAddress}`}
               target="_blank"
-              className="px-4 py-1 rounded-full focus:outline-none bg-orange-500 text-white shadow ml-2"
+              className="py-1 px-4 ml-2 text-white bg-orange-500 rounded-full shadow focus:outline-none"
               rel="noreferrer"
             >
               Check
             </a>
           </div>
         </div>
-        <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20 flex flex-col">
+        <div className="flex relative flex-col py-10 px-4 bg-white shadow-lg sm:p-20 sm:rounded-3xl">
           <button
-            className="btn btn-green mt-1"
+            className="mt-1 btn btn-green"
             type="button"
             onClick={getBalance}
           >
@@ -187,7 +187,7 @@ function App() {
             placeholder="Amount"
           />
           <button
-            className="btn btn-green mt-1"
+            className="mt-1 btn btn-green"
             type="button"
             onClick={sendToken}
           >
