@@ -5,6 +5,8 @@
 
 > Dapp example with react (vitejs)
 
+[![IT Man - Tech #34 - Viem - TypeScript Interface for Ethereum [Vietnamese]](https://i.ytimg.com/vi/D3_RePAQ9xQ/hqdefault.jpg)](https://www.youtube.com/watch?v=D3_RePAQ9xQ)
+
 ## 🏠 [Homepage](https://github.com/jellydn/react-dapp)
 
 ### ✨ [Demo](https://dapp-demo.productsway.com/)
