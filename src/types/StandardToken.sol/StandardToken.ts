@@ -8,7 +8,6 @@ import type {
   TypedEvent,
   TypedListener,
   OnEvent,
-  PromiseOrValue,
 } from "../common";
 import type {
   FunctionFragment,
@@ -61,24 +60,18 @@ export interface StandardTokenInterface extends utils.Interface {
 
   encodeFunctionData(
     functionFragment: "allowance",
-    values: [PromiseOrValue<string>, PromiseOrValue<string>]
+    values: [string, string]
   ): string;
   encodeFunctionData(
     functionFragment: "allowed",
-    values: [PromiseOrValue<string>, PromiseOrValue<string>]
+    values: [string, string]
   ): string;
   encodeFunctionData(
     functionFragment: "approve",
-    values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
+    values: [string, BigNumberish]
   ): string;
-  encodeFunctionData(
-    functionFragment: "balanceOf",
-    values: [PromiseOrValue<string>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "balances",
-    values: [PromiseOrValue<string>]
-  ): string;
+  encodeFunctionData(functionFragment: "balanceOf", values: [string]): string;
+  encodeFunctionData(functionFragment: "balances", values: [string]): string;
   encodeFunctionData(functionFragment: "decimals", values?: undefined): string;
   encodeFunctionData(functionFragment: "name", values?: undefined): string;
   encodeFunctionData(functionFragment: "symbol", values?: undefined): string;
@@ -88,15 +81,11 @@ export interface StandardTokenInterface extends utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "transfer",
-    values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
+    values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
     functionFragment: "transferFrom",
-    values: [
-      PromiseOrValue<string>,
-      PromiseOrValue<string>,
-      PromiseOrValue<BigNumberish>
-    ]
+    values: [string, string, BigNumberish]
   ): string;
 
   decodeFunctionResult(functionFragment: "allowance", data: BytesLike): Result;
@@ -178,32 +167,29 @@ export interface StandardToken extends BaseContract {
 
   functions: {
     allowance(
-      _owner: PromiseOrValue<string>,
-      _spender: PromiseOrValue<string>,
+      _owner: string,
+      _spender: string,
       overrides?: CallOverrides
     ): Promise<[BigNumber] & { remaining: BigNumber }>;
 
     allowed(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<string>,
+      arg0: string,
+      arg1: string,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
     approve(
-      _spender: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      _spender: string,
+      _value: BigNumberish,
+      overrides?: Overrides & { from?: string }
     ): Promise<ContractTransaction>;
 
     balanceOf(
-      _owner: PromiseOrValue<string>,
+      _owner: string,
       overrides?: CallOverrides
     ): Promise<[BigNumber] & { balance: BigNumber }>;
 
-    balances(
-      arg0: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<[BigNumber]>;
+    balances(arg0: string, overrides?: CallOverrides): Promise<[BigNumber]>;
 
     decimals(overrides?: CallOverrides): Promise<[number]>;
 
@@ -214,46 +200,40 @@ export interface StandardToken extends BaseContract {
     totalSupply(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     transfer(
-      _to: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      _to: string,
+      _value: BigNumberish,
+      overrides?: Overrides & { from?: string }
     ): Promise<ContractTransaction>;
 
     transferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      _from: string,
+      _to: string,
+      _value: BigNumberish,
+      overrides?: Overrides & { from?: string }
     ): Promise<ContractTransaction>;
   };
 
   allowance(
-    _owner: PromiseOrValue<string>,
-    _spender: PromiseOrValue<string>,
+    _owner: string,
+    _spender: string,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
   allowed(
-    arg0: PromiseOrValue<string>,
-    arg1: PromiseOrValue<string>,
+    arg0: string,
+    arg1: string,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
   approve(
-    _spender: PromiseOrValue<string>,
-    _value: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    _spender: string,
+    _value: BigNumberish,
+    overrides?: Overrides & { from?: string }
   ): Promise<ContractTransaction>;
 
-  balanceOf(
-    _owner: PromiseOrValue<string>,
-    overrides?: CallOverrides
-  ): Promise<BigNumber>;
+  balanceOf(_owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
-  balances(
-    arg0: PromiseOrValue<string>,
-    overrides?: CallOverrides
-  ): Promise<BigNumber>;
+  balances(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
   decimals(overrides?: CallOverrides): Promise<number>;
 
@@ -264,46 +244,40 @@ export interface StandardToken extends BaseContract {
   totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
   transfer(
-    _to: PromiseOrValue<string>,
-    _value: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    _to: string,
+    _value: BigNumberish,
+    overrides?: Overrides & { from?: string }
   ): Promise<ContractTransaction>;
 
   transferFrom(
-    _from: PromiseOrValue<string>,
-    _to: PromiseOrValue<string>,
-    _value: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    _from: string,
+    _to: string,
+    _value: BigNumberish,
+    overrides?: Overrides & { from?: string }
   ): Promise<ContractTransaction>;
 
   callStatic: {
     allowance(
-      _owner: PromiseOrValue<string>,
-      _spender: PromiseOrValue<string>,
+      _owner: string,
+      _spender: string,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     allowed(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<string>,
+      arg0: string,
+      arg1: string,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     approve(
-      _spender: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
+      _spender: string,
+      _value: BigNumberish,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    balanceOf(
-      _owner: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    balanceOf(_owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
-    balances(
-      arg0: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    balances(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
     decimals(overrides?: CallOverrides): Promise<number>;
 
@@ -314,71 +288,65 @@ export interface StandardToken extends BaseContract {
     totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
     transfer(
-      _to: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
+      _to: string,
+      _value: BigNumberish,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
     transferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
+      _from: string,
+      _to: string,
+      _value: BigNumberish,
       overrides?: CallOverrides
     ): Promise<boolean>;
   };
 
   filters: {
     "Approval(address,address,uint256)"(
-      _owner?: PromiseOrValue<string> | null,
-      _spender?: PromiseOrValue<string> | null,
+      _owner?: string | null,
+      _spender?: string | null,
       _value?: null
     ): ApprovalEventFilter;
     Approval(
-      _owner?: PromiseOrValue<string> | null,
-      _spender?: PromiseOrValue<string> | null,
+      _owner?: string | null,
+      _spender?: string | null,
       _value?: null
     ): ApprovalEventFilter;
 
     "Transfer(address,address,uint256)"(
-      _from?: PromiseOrValue<string> | null,
-      _to?: PromiseOrValue<string> | null,
+      _from?: string | null,
+      _to?: string | null,
       _value?: null
     ): TransferEventFilter;
     Transfer(
-      _from?: PromiseOrValue<string> | null,
-      _to?: PromiseOrValue<string> | null,
+      _from?: string | null,
+      _to?: string | null,
       _value?: null
     ): TransferEventFilter;
   };
 
   estimateGas: {
     allowance(
-      _owner: PromiseOrValue<string>,
-      _spender: PromiseOrValue<string>,
+      _owner: string,
+      _spender: string,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     allowed(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<string>,
+      arg0: string,
+      arg1: string,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     approve(
-      _spender: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      _spender: string,
+      _value: BigNumberish,
+      overrides?: Overrides & { from?: string }
     ): Promise<BigNumber>;
 
-    balanceOf(
-      _owner: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    balanceOf(_owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
-    balances(
-      arg0: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
+    balances(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
     decimals(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -389,45 +357,45 @@ export interface StandardToken extends BaseContract {
     totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
     transfer(
-      _to: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      _to: string,
+      _value: BigNumberish,
+      overrides?: Overrides & { from?: string }
     ): Promise<BigNumber>;
 
     transferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      _from: string,
+      _to: string,
+      _value: BigNumberish,
+      overrides?: Overrides & { from?: string }
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
     allowance(
-      _owner: PromiseOrValue<string>,
-      _spender: PromiseOrValue<string>,
+      _owner: string,
+      _spender: string,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     allowed(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<string>,
+      arg0: string,
+      arg1: string,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     approve(
-      _spender: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      _spender: string,
+      _value: BigNumberish,
+      overrides?: Overrides & { from?: string }
     ): Promise<PopulatedTransaction>;
 
     balanceOf(
-      _owner: PromiseOrValue<string>,
+      _owner: string,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     balances(
-      arg0: PromiseOrValue<string>,
+      arg0: string,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -440,16 +408,16 @@ export interface StandardToken extends BaseContract {
     totalSupply(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     transfer(
-      _to: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      _to: string,
+      _value: BigNumberish,
+      overrides?: Overrides & { from?: string }
     ): Promise<PopulatedTransaction>;
 
     transferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _value: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      _from: string,
+      _to: string,
+      _value: BigNumberish,
+      overrides?: Overrides & { from?: string }
     ): Promise<PopulatedTransaction>;
   };
 }

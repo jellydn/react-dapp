@@ -2,9 +2,7 @@ import { ethers } from "ethers";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
-import GreeterArtifacts from "./artifacts/contracts/Greeter.sol/Greeter.json";
-import StandardTokenArtifacts from "./artifacts/contracts/StandardToken.sol/StandardToken.json";
-import { Greeter, StandardToken } from "./types";
+import { Greeter__factory, StandardToken__factory } from "./types";
 
 const greeterAddress = import.meta.env.VITE_GREETER_ADDRESS;
 const tokenAddress = import.meta.env.VITE_TOKEN_ADDRESS;
@@ -37,11 +35,7 @@ function App() {
   async function fetchGreeting() {
     if (typeof window.ethereum !== "undefined") {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const contract = new ethers.Contract(
-        greeterAddress,
-        GreeterArtifacts.abi,
-        provider
-      ) as Greeter;
+      const contract = Greeter__factory.connect(greeterAddress, provider);
       try {
         const data = await contract.greet();
         toast.success(`Greeting: ${data}`);
@@ -58,11 +52,7 @@ function App() {
       await requestAccount();
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
-      const contract = new ethers.Contract(
-        greeterAddress,
-        GreeterArtifacts.abi,
-        signer
-      ) as Greeter;
+      const contract = Greeter__factory.connect(greeterAddress, signer);
 
       const transaction = await contract.setGreeting(greeting);
       await transaction.wait();
@@ -74,11 +64,7 @@ function App() {
   async function getBalance() {
     if (typeof window.ethereum !== "undefined") {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const contract = new ethers.Contract(
-        tokenAddress,
-        StandardTokenArtifacts.abi,
-        provider
-      ) as StandardToken;
+      const contract = StandardToken__factory.connect(tokenAddress, provider);
 
       // request account from metamask
       const [account] = await requestAccount();
@@ -96,11 +82,7 @@ function App() {
       await requestAccount();
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
-      const contract = new ethers.Contract(
-        tokenAddress,
-        StandardTokenArtifacts.abi,
-        signer
-      ) as StandardToken;
+      const contract = StandardToken__factory.connect(tokenAddress, signer);
       const transaction = await contract.transfer(userAddress, amount);
       await transaction.wait();
       getBalance();
