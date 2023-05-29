@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 require("dotenv").config();
 require("@typechain/hardhat");
 require("@nomiclabs/hardhat-ethers");
@@ -38,17 +37,9 @@ module.exports = {
     hardhat: {
       chainId: 1337,
     },
-    ropsten: {
-      url: process.env.ROPSTEN_PROVIDER_URL,
-      accounts: {
-        mnemonic: process.env.MNEMONIC,
-      },
-    },
-    rinkeby: {
-      url: process.env.RINKEBY_PROVIDER_URL,
-      accounts: {
-        mnemonic: process.env.MNEMONIC,
-      },
+    mumbai: {
+      url: process.env.MUMBAI_PROVIDER_URL,
+      accounts: [process.env.ACCOUNT_PRIVATE_KEY],
     },
   },
   etherscan: {
