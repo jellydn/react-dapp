@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 import { Greeter__factory, StandardToken__factory } from "./types";
@@ -20,6 +20,25 @@ function App() {
   const [userAddress, setUserAddressValue] = useState<string>("");
   // store amount in local state
   const [amount, setAmountValue] = useState<number>(0);
+
+  useEffect(() => {
+    const checkMetamaskAndNetwork = async () => {
+      if (typeof window.ethereum !== "undefined") {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const network = await provider.getNetwork();
+        if (network.chainId !== 80001) {
+          // Mumbai Testnet Chain ID
+          toast.error("Please connect MetaMask to the Mumbai Testnet.");
+        }
+      } else {
+        toast.error(
+          "MetaMask is not installed. Please install it from https://metamask.io/ to continue."
+        );
+      }
+    };
+
+    checkMetamaskAndNetwork();
+  }, []);
 
   // request access to the user's MetaMask account
   async function requestAccount() {
@@ -97,7 +116,7 @@ function App() {
             <span className="text-gray-800">Greeter Contract</span>
             <span className="mx-1 text-3xl text-orange-500">/</span>
             <a
-              href={`https://ropsten.etherscan.io/address/${greeterAddress}`}
+              href={`https://mumbai.polygonscan.com/address/${greeterAddress}`}
               target="_blank"
               className="py-1 px-4 ml-2 text-white bg-orange-500 rounded-full shadow focus:outline-none"
               rel="noreferrer"
@@ -138,7 +157,7 @@ function App() {
             <span className="text-gray-800">Token Contract</span>
             <span className="mx-1 text-3xl text-orange-500">/</span>
             <a
-              href={`https://ropsten.etherscan.io/address/${tokenAddress}`}
+              href={`https://mumbai.polygonscan.com/address/${greeterAddress}`}
               target="_blank"
               className="py-1 px-4 ml-2 text-white bg-orange-500 rounded-full shadow focus:outline-none"
               rel="noreferrer"
