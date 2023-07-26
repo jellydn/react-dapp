@@ -1,6 +1,6 @@
-/// <reference types="vite/client" />
+import "vite/client";
 
-interface ImportMetaEnv {
+type ImportMetaEnv = {
   VITE_GREETER_ADDRESS: string;
   VITE_TOKEN_ADDRESS: string;
-}
+};

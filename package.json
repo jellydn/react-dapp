@@ -7,6 +7,7 @@
     "clean": "npx hardhat clean",
     "compile-node": "npx hardhat run scripts/deploy.js --network localhost",
     "dev": "vite",
+    "lint:react": "eslint --cache --fix 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:sol": "npx solhint 'contracts/**/*.sol'",
     "local-node": "npx hardhat node",
     "prepare": "husky install",

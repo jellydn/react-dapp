@@ -1,5 +1,5 @@
 module.exports = {
-  extends: "productsway",
+  extends: "productsway/react",
   parserOptions: {
     project: "./tsconfig.json",
   },

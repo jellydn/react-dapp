@@ -4,53 +4,54 @@ import toast, { Toaster } from "react-hot-toast";
 
 import { Greeter__factory, StandardToken__factory } from "./types";
 
-const greeterAddress = import.meta.env.VITE_GREETER_ADDRESS;
-const tokenAddress = import.meta.env.VITE_TOKEN_ADDRESS;
+const greeterAddress = String(import.meta.env.VITE_GREETER_ADDRESS ?? "");
+const tokenAddress = String(import.meta.env.VITE_TOKEN_ADDRESS ?? "");
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface Window {
     ethereum: ethers.providers.ExternalProvider;
   }
 }
 
 function App() {
-  // store greeting in local state
-  const [greeting, setGreetingValue] = useState<string>("");
-  // store user address in local state
-  const [userAddress, setUserAddressValue] = useState<string>("");
-  // store amount in local state
-  const [amount, setAmountValue] = useState<number>(0);
+  // Store greeting in local state
+  const [greeting, setGreeting] = useState<string>("");
+  // Store user address in local state
+  const [userAddress, setUserAddress] = useState<string>("");
+  // Store amount in local state
+  const [amount, setAmount] = useState<number>(0);
 
   useEffect(() => {
     const checkMetamaskAndNetwork = async () => {
-      if (typeof window.ethereum !== "undefined") {
+      if (typeof window.ethereum === "undefined") {
+        toast.error(
+          "MetaMask is not installed. Please install it from https://metamask.io/ to continue.",
+        );
+      } else {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const network = await provider.getNetwork();
         if (network.chainId !== 80001) {
           // Mumbai Testnet Chain ID
           toast.error("Please connect MetaMask to the Mumbai Testnet.");
         }
-      } else {
-        toast.error(
-          "MetaMask is not installed. Please install it from https://metamask.io/ to continue."
-        );
       }
     };
 
-    checkMetamaskAndNetwork();
+    checkMetamaskAndNetwork().catch(console.error);
   }, []);
 
-  // request access to the user's MetaMask account
+  // Request access to the user's MetaMask account
   async function requestAccount() {
     if (window.ethereum?.request)
       return window.ethereum.request({ method: "eth_requestAccounts" });
 
     throw new Error(
-      "Missing install Metamask. Please access https://metamask.io/ to install extension on your browser"
+      "Missing install Metamask. Please access https://metamask.io/ to install extension on your browser",
     );
   }
 
-  // call the smart contract, read the current greeting value
+  // Call the smart contract, read the current greeting value
   async function fetchGreeting() {
     if (typeof window.ethereum !== "undefined") {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -59,13 +60,13 @@ function App() {
         const data = await contract.greet();
         toast.success(`Greeting: ${data}`);
       } catch (err) {
-        toast.error(`Error: ${err}`);
+        toast.error(`Error: ${JSON.stringify(err)}`);
       }
     }
   }
 
-  // call the smart contract, send an update
-  async function setGreeting() {
+  // Call the smart contract, send an update
+  async function handleSetGreeting() {
     if (!greeting) return;
     if (typeof window.ethereum !== "undefined") {
       await requestAccount();
@@ -75,36 +76,36 @@ function App() {
 
       const transaction = await contract.setGreeting(greeting);
       await transaction.wait();
-      fetchGreeting();
+      await fetchGreeting();
     }
   }
 
-  // get balance of the token contract
+  // Get balance of the token contract
   async function getBalance() {
     if (typeof window.ethereum !== "undefined") {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = StandardToken__factory.connect(tokenAddress, provider);
 
-      // request account from metamask
+      // Request account from metamask
       const [account] = await requestAccount();
-      const balance = await contract.balanceOf(account);
+      const balance = await contract.balanceOf(String(account));
       toast.success(`balance: ${balance.toString()}`);
     }
   }
 
-  // send a transaction to the token contract
+  // Send a transaction to the token contract
   async function sendToken() {
     if (!userAddress || !amount) return;
 
     if (typeof window.ethereum !== "undefined") {
-      // request account from metamask
+      // Request account from metamask
       await requestAccount();
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = StandardToken__factory.connect(tokenAddress, signer);
       const transaction = await contract.transfer(userAddress, amount);
       await transaction.wait();
-      getBalance();
+      await getBalance();
     }
   }
 
@@ -130,20 +131,22 @@ function App() {
             <button
               className="mt-1 btn btn-green"
               type="button"
-              onClick={fetchGreeting}
+              onClick={async () => fetchGreeting()}
             >
               Fetch Greeting
             </button>
             <div className="flex flex-row flex-wrap mt-1">
               <input
-                onChange={(e) => setGreetingValue(e.target.value)}
                 type="text"
                 placeholder="Set greeting"
+                onChange={(e) => {
+                  setGreeting(e.target.value);
+                }}
               />
               <button
                 className="ml-1 btn btn-green"
                 type="button"
-                onClick={setGreeting}
+                onClick={async () => handleSetGreeting()}
               >
                 Set Greeting
               </button>
@@ -170,7 +173,7 @@ function App() {
           <button
             className="mt-1 btn btn-green"
             type="button"
-            onClick={getBalance}
+            onClick={async () => getBalance()}
           >
             Get Balance
           </button>
@@ -179,18 +182,22 @@ function App() {
 
           <input
             type="text"
-            onChange={(e) => setUserAddressValue(e.target.value)}
             placeholder="User address"
+            onChange={(e) => {
+              setUserAddress(e.target.value);
+            }}
           />
           <input
             type="number"
-            onChange={(e) => setAmountValue(Number(e.target.value))}
             placeholder="Amount"
+            onChange={(e) => {
+              setAmount(Number(e.target.value));
+            }}
           />
           <button
             className="mt-1 btn btn-green"
             type="button"
-            onClick={sendToken}
+            onClick={async () => sendToken()}
           >
             Send token
           </button>
