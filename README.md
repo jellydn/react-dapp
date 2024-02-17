@@ -18,7 +18,7 @@
 ## Install
 
 ```sh
-yarn install
+bun install
 ```
 
 ## Built with
@@ -35,7 +35,7 @@ Open 1st terminal, then run below command
 ```sh
 npx hardhat node
 # or
-yarn local-node
+bun run local-node
 ```
 
 For example, below is my result.
@@ -58,7 +58,7 @@ npx hardhat compile
 # Deploy localhost
 npx hardhat run scripts/deploy.js --network localhost
 # Or
-yarn compile-node
+bun run compile-node
 ```
 
 You will get the deploy address from CLI. For example:
@@ -93,7 +93,7 @@ ETHERSCAN_API=
 Then run below command
 
 ```sh
-yarn dev
+bun run dev
 ```
 
 ## Deploy to Ropsten Testnet
